@@ -19,6 +19,11 @@ h6 {
   padding: 0px;
 }
 
+button {
+  outline: none;
+  cursor: pointer;
+}
+
 .flex {
   display: flex;
 }
@@ -32,6 +37,14 @@ h6 {
 }
 .fixed {
   position: fixed;
+}
+
+.abs {
+  position: absolute;
+}
+
+.rel {
+  position: relative;
 }
 
 .noul {
@@ -67,6 +80,9 @@ h6 {
   font-size: 24px;
 }
 
-.font {
+.fontn {
+  font-weight: normal;
+}
+.fontb {
   font-weight: bold;
 }

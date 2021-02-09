@@ -9,11 +9,19 @@ function Sidebar() {
     { label: 'Settings', slug: 'settings', icon: 'icon-users' },
   ]);
 
+  const [currentPage, setCurrentPage] = useState('/');
+
   let navigation = [];
   for (let i = 0; i < nav.length; i++) {
     navigation.push(
       <li key={'nav-' + i + '-' + nav[i].slug}>
-        <a href={nav[i].slug} className='aic link noul flex c333'>
+        <a
+          href={nav[i].slug}
+          className={
+            'aic link noul flex c333' +
+            (currentPage == nav[i].slug ? ' on ' : '')
+          }
+        >
           <div className={'ico s20 ' + nav[i].icon} />
           <h2 className='lbl s20'>{nav[i].label}</h2>
         </a>
@@ -21,7 +29,7 @@ function Sidebar() {
     );
   }
   return (
-    <sidebar className='sidebar fixed'>
+    <sidebar className='sidebar rel'>
       <a href='#' className='logo bl'>
         <img src={logo} alt='logo' className='bl' />
       </a>
@@ -46,16 +54,18 @@ function Sidebar() {
           <h2 className='val s15 fontb'>45.3</h2>
           <h2 className='lbl s13 c777'>complete</h2>
         </div>
+      </div>
 
-        <div className='me flex aic'>
-          <div className='photo cfff s24'>
-            <img
-              src='http://placeimg.com/100/100/people'
-              className='lbl'
-              alt='profile'
-            />
-          </div>
-          <div className='lbl s15 fontb c333'>Peter</div>
+      <div className='me flex aic'>
+        <div className='photo cfff s24'>
+          <img
+            src='http://placeimg.com/100/100/people'
+            className='lbl'
+            alt='profile'
+          />
+        </div>
+        <div className='lbl s15 fontb c333'>
+          Peter
           <h2 className='uname s13 c777'>@peter</h2>
         </div>
       </div>
