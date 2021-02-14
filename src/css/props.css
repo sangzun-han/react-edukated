@@ -24,6 +24,11 @@ button {
   cursor: pointer;
 }
 
+select,
+textarea,
+input {
+  outline: none;
+}
 .flex {
   display: flex;
 }
@@ -70,6 +75,9 @@ button {
   font-size: 13px;
 }
 
+.s14 {
+  font-size: 14px;
+}
 .s15 {
   font-size: 15px;
 }
