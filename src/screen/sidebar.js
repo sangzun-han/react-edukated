@@ -1,6 +1,8 @@
 import React, { useState } from 'react';
 import logo from '../image/logo-coral.svg';
 
+import { NavLink } from 'react-router-dom';
+
 function Sidebar() {
   const [nav, setNav] = useState([
     { label: 'Home', slug: '/', icon: 'icon-home' },
@@ -15,16 +17,10 @@ function Sidebar() {
   for (let i = 0; i < nav.length; i++) {
     navigation.push(
       <li key={'nav-' + i + '-' + nav[i].slug}>
-        <a
-          href={nav[i].slug}
-          className={
-            'aic link noul flex c333' +
-            (currentPage == nav[i].slug ? ' on ' : '')
-          }
-        >
+        <NavLink to={nav[i].slug} className={'aic link noul flex c333'}>
           <div className={'ico s20 ' + nav[i].icon} />
           <h2 className='lbl s20'>{nav[i].label}</h2>
-        </a>
+        </NavLink>
       </li>
     );
   }

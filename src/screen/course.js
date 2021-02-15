@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import Course1 from '../image/course1.png';
 import Course2 from '../image/course2.jpg';
 
-function Course() {
+function Course(props) {
   const [course, setCourse] = useState({
     ID: 1,
     title:
@@ -36,7 +36,10 @@ function Course() {
     ],
   });
 
+  const courseID = props.match.params.courseid;
+
   let courseVideos = [];
+
   for (let i = 0; i < course.videos.length; i++) {
     courseVideos.push(
       <a href='#' key={'course-video-' + i} className='noul aic rel flex'>
@@ -49,6 +52,7 @@ function Course() {
     );
   }
 
+  console.log(props);
   return (
     <article className='course-page rel flex'>
       <div className='course-info rel'>

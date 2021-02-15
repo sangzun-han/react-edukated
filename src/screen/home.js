@@ -1,8 +1,14 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
+
 import Course1 from '../image/course1.png';
 import Course2 from '../image/course2.jpg';
 
+import { NavLink } from 'react-router-dom';
+
 function Home() {
+  useEffect(() => {
+    document.title = 'CAMBLY';
+  });
   const [popularCourse, setPopularCourse] = useState([
     {
       ID: 1,
@@ -93,7 +99,11 @@ function Home() {
 
   for (let i = 0; i < popularCourse.length; i++) {
     courseList.push(
-      <a href='#' className='course rel' key={'popular-course-' + i}>
+      <NavLink
+        to={'/course/' + popularCourse[i].ID}
+        className='course rel'
+        key={'popular-course-' + i}
+      >
         <div
           className='block rel'
           style={{
@@ -126,7 +136,7 @@ function Home() {
             </h2>
           </div>
         </div>
-      </a>
+      </NavLink>
     );
   }
 
