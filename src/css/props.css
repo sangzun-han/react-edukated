@@ -55,6 +55,11 @@ input {
 .noul {
   text-decoration: none;
 }
+
+.ibl {
+  display: inline-block;
+}
+
 .bl {
   display: block;
 }
@@ -80,6 +85,9 @@ input {
 }
 .s15 {
   font-size: 15px;
+}
+.s18 {
+  font-size: 18px;
 }
 .s20 {
   font-size: 20px;

@@ -4,6 +4,7 @@ import Header from './screen/header';
 import Sidebar from './screen/sidebar';
 import Home from './screen/home';
 import Rightbar from './screen/rightbar';
+import Course from './screen/course';
 
 import './css/uifont.css';
 import './css/props.css';
@@ -14,9 +15,9 @@ function App() {
     <div className='App flex'>
       <Sidebar />
       <div className='app-content'>
-        <Home />
+        <Course />
       </div>
-      <Rightbar />
+      {/* <Rightbar /> */}
     </div>
   );
 }
